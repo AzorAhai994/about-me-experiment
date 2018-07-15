@@ -54,19 +54,32 @@
 
         })();
     </script>
-
     <script>
-        $(function () {
-            $('#work').hover(function () {
-                $('#deco').css('opacity', '1');
-                $('#tag').css('border-top', '4px solid #1dd100');
-            }, function () {
-                // on mouseout, reset the background colour
-                $('#deco').css('opacity', '0');
-                $('#tag').css('border-top', '4px solid #0058fb');
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $(function () {
+                $('#work').hover(function () {
+
+                    $('#tag').css('border-top', '4px solid #1dd100');
+                }, function () {
+                    // on mouseout, reset the background colour
+
+                    $('#tag').css('border-top', '4px solid #0058fb');
+                });
             });
-        });
+        } else {
+            $(function () {
+                $('#work').hover(function () {
+                    $('#deco').css('opacity', '1');
+                    $('#tag').css('border-top', '4px solid #1dd100');
+                }, function () {
+                    // on mouseout, reset the background colour
+                    $('#deco').css('opacity', '0');
+                    $('#tag').css('border-top', '4px solid #0058fb');
+                });
+            });
+        }
     </script>
+
 </body>
 
 
