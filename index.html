@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>abt me experiment</title>
-    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <title>jQuery parallaxTilt Plugin Demo</title>
+
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
     <div class="container">
-        <a href="#" id="work" class="parallaxTilt_hover">
+        <a href="imgs/files/resume.pdf" id="work" class="parallaxTilt_hover">
             <figure class="tilter_figure">
                 <img class="tilter_image" src="imgs/img_2.jpg" alt="dive" />
-                <div class="tilter_deco">
+                <div id="deco" class="tilter_deco">
                     <img class="tilter_image" src="imgs/img_1.png" alt="dive" />
                 </div>
                 <figcaption class="tilter_caption">
                     <h3 class="tilter_title">Marinko Brdarević</h3>
-                    <p class="tilter_tag">
+                    <p id="tag" class="tilter_tag">
                         <span>Web designer / developer</span>
                     </p>
                 </figcaption>
@@ -42,7 +42,8 @@
             //      easing:'easeOutExpo'
 
             $('.tilter_image').parallaxTilt({
-                parallaxMultiple: .18
+                parallaxMultiple: .20,
+
             });
             $('.tilter_deco').parallaxTilt({
                 parallaxMultiple: .05
@@ -52,6 +53,19 @@
             });
 
         })();
+    </script>
+
+    <script>
+        $(function () {
+            $('#work').hover(function () {
+                $('#deco').css('opacity', '1');
+                $('#tag').css('border-top', '4px solid #1dd100');
+            }, function () {
+                // on mouseout, reset the background colour
+                $('#deco').css('opacity', '0');
+                $('#tag').css('border-top', '4px solid #0058fb');
+            });
+        });
     </script>
 </body>
 
