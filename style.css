@@ -118,8 +118,8 @@ body {
 	.parallaxTilt_hover {
 		width: 150px;
 		height: 150px;
-		left: calc(50% - 100px);
-		top: calc(50% - 100px);
+		left: calc(66% - 100px);
+		top: calc(21% - 100px);
 	}
 	.tilter_figure .tilter_title {
 		font-size: 2em;
